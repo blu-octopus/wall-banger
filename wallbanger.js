@@ -5,6 +5,10 @@ let score = 0;
 // Get the audio element
 const clickSound = document.getElementById("clickSound");
 
+// Preload the audio and ensure it's loaded
+clickSound.preload = "auto";
+clickSound.load();
+
 // Click event handler for the game area
 document.querySelector(".game-area").addEventListener("click", function() {
     // Debugging: Log a message to check if the click event is triggered
@@ -16,10 +20,8 @@ document.querySelector(".game-area").addEventListener("click", function() {
     // Debugging: Log the updated score
     console.log("Score:", score);
 
-    // Reset and play the click sound
-    if (clickSound.currentTime !== 0) {
-        clickSound.currentTime = 0;
-    }
+    // Play the click sound immediately
+    clickSound.currentTime = 0;
     clickSound.play();
 
     // Debugging: Log a message to indicate that the sound is played
