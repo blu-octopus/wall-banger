@@ -1,2 +1,4 @@
 # wall-banger
-bang wall here
+@import "{{ site.theme }}";
+
+bang walls here

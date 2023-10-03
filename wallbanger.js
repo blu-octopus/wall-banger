@@ -1,16 +1,29 @@
+// JavaScript code for Wall Banger
 
 let score = 0;
 
+// Get the audio element
+const clickSound = document.getElementById("clickSound");
+
 // Click event handler for the game area
 document.querySelector(".game-area").addEventListener("click", function() {
+    // Debugging: Log a message to check if the click event is triggered
+    console.log("Click event triggered.");
+    
     // Increase score
     score++;
     
-    // Play click sound (if not already playing)
-    const clickSound = document.getElementById("clickSound");
-    if (clickSound.paused) {
-        clickSound.play();
+    // Debugging: Log the updated score
+    console.log("Score:", score);
+
+    // Reset and play the click sound
+    if (clickSound.currentTime !== 0) {
+        clickSound.currentTime = 0;
     }
+    clickSound.play();
+
+    // Debugging: Log a message to indicate that the sound is played
+    console.log("Click sound played.");
 
     // Update the UI
     document.getElementById("score").textContent = score;
@@ -29,27 +42,3 @@ document.getElementById("upgradeButton").addEventListener("click", function() {
         upgradeCost *= 2;
     }
 });
-
-
-// Play click sound when the button is clicked
-document.getElementById("clickButton").addEventListener("click", function() {
-    // Play the click sound
-    playSound("clickSound");
-    
-    // Increase score
-    score++;
-    
-    // Update the UI
-    document.getElementById("score").textContent = score;
-    // Play click animation (you'll need to add this)
-});
-
-// Function to play an audio element by its ID
-function playSound(soundId) {
-    const audioElement = document.getElementById(soundId);
-    if (audioElement) {
-        audioElement.currentTime = 0; // Rewind to the start of the sound
-        audioElement.play();
-    }
-}
-
