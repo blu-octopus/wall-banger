@@ -1,0 +1,51 @@
+/* CSS code for Wall Banger */
+
+/* Style the game container */
+.game-container {
+    text-align: center;
+    margin: 50px auto;
+    max-width: 400px;
+}
+
+/* Style the game area (rectangle) */
+.game-area {
+    width: 300px;
+    height: 300px;
+    background-color: #ccc; /* Background color of the game area */
+    position: relative; /* Required for positioning the guy animation */
+    cursor: pointer; /* Change cursor to indicate clickability */
+}
+
+/* Style the guy animation */
+.guy-animation {
+    width: 100px; /* Adjust the width of the guy animation */
+    height: 100px; /* Adjust the height of the guy animation */
+    background-image: url('assets/sadge_cat.jpeg'); /* Updated image path */
+    background-size: cover;
+    position: absolute; /* Position the guy animation within the game area */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the animation */
+}
+
+/* Style the score display */
+p {
+    font-size: 20px;
+    color: #333;
+}
+
+/* Style the buttons */
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wall Banger</title>
+    
+    <!-- Link your CSS file -->
+    <link rel="stylesheet" type="text/css" href="wallbanger.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Create a clickable game area (rectangle) -->
+        <div class="game-area">
+            <!-- Add the guy animation PNG asset as a background image -->
+            <div class="guy-animation"></div>
+        </div>
+        <p>Score: <span id="score">0</span></p>
+        <button id="upgradeButton">Buy Upgrade</button>
+    </div>
+    
+    <!--audio-->
+    <audio id="clickSound" hidden>
+        <source src="assets/bonk.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- JavaScript-->
+    <script src="wallbanger.js"></script>
+</body>
+</html>
