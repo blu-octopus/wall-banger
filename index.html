@@ -10,22 +10,18 @@
 </head>
 <body>
     <div class="game-container">
-        <!-- Create a clickable game area (rectangle) -->
         <div class="game-area">
-            <!-- Add the guy animation PNG asset as a background image -->
-            <div class="guy-animation"></div>
+            <div id="animationContainer" class="original-state"></div>
         </div>
         <p>Score: <span id="score">0</span></p>
-        <button id="upgradeButton">Change Skin</button>
+        <button id="animateButton">Animate</button>
     </div>
     
-    <!--audio-->
     <audio id="clickSound" hidden>
         <source src="assets/bonk.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-
-    <!-- JavaScript-->
+    <!-- Include your JavaScript file -->
     <script src="wallbanger.js"></script>
 </body>
 </html>
