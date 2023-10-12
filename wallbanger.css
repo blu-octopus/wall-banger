@@ -16,24 +16,16 @@
     cursor: pointer; /* Change cursor to indicate clickability */
 }
 
-/* Style the guy animation image */
+/* Style the guy animation */
 .guy-animation {
     width: 100px; /* Adjust the width of the guy animation */
     height: 100px; /* Adjust the height of the guy animation */
-    background-image: url('assets/cat.png'); /* Initial image (cat.png) */
+    background-image: url('assets/sadge_cat.jpeg'); /* Updated image path */
     background-size: cover;
     position: absolute; /* Position the guy animation within the game area */
     top: 50%; /* Center vertically */
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Center the animation */
-}
-
-/* Style the animation image (initially set as a placeholder image) */
-#animationImage {
-    width: 100px; /* Adjust the width of the guy animation */
-    height: 100px; /* Adjust the height of the guy animation */
-    background-image: url('assets/cat.gif'); 
-    background-size: cover;
 }
 
 /* Style the score display */
@@ -56,16 +48,4 @@ button {
 
 button:hover {
     background-color: #45a049;
-}
-
-/* Style the video (initially hidden) */
-video {
-    display: block;
-    margin: 0 auto;
-    display: none;
-}
-
-/* Hidden class for elements (initially hidden) */
-.hidden {
-    display: none;
 }
