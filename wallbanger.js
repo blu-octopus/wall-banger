@@ -1,6 +1,8 @@
 // JavaScript code for Wall Banger
 
 let score = 0;
+let isAnimating = false; // Variable to track animation state
+const animationDuration = 500; // Animation duration in milliseconds
 
 // Get the audio element
 const clickSound = document.getElementById("clickSound");
@@ -13,10 +15,25 @@ clickSound.load();
 document.querySelector(".game-area").addEventListener("click", function() {
     // Debugging: Log a message to check if the click event is triggered
     console.log("Click event triggered.");
-    
+
+    // If not already animating, play the animation
+    if (!isAnimating) {
+        isAnimating = true;
+
+        // Play the click animation
+        const catAnimation = document.getElementById("cat");
+        catAnimation.style.backgroundImage = 'url("assets/cat.gif")';
+
+        // After a delay, switch back to the PNG image
+        setTimeout(function() {
+            catAnimation.style.backgroundImage = 'url("assets/sadge_cat.jpeg")';
+            isAnimating = false;
+        }, animationDuration);
+    }
+
     // Increase score
     score++;
-    
+
     // Debugging: Log the updated score
     console.log("Score:", score);
 
@@ -29,7 +46,6 @@ document.querySelector(".game-area").addEventListener("click", function() {
 
     // Update the UI
     document.getElementById("score").textContent = score;
-    // Play click animation (you'll need to add this)
 });
 
 // Upgrade button event handler (if you still want it)
