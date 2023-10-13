@@ -11,6 +11,7 @@
 .game-area {
     width: 300px;
     height: 300px;
+    /*background-image: url('assets/wall.png'); /* Updated image path */
     background-color: #ccc; /* Background color of the game area */
     position: relative; /* Required for positioning the guy animation */
     cursor: pointer; /* Change cursor to indicate clickability */
@@ -20,7 +21,7 @@
 .guy-animation {
     width: 100px; /* Adjust the width of the guy animation */
     height: 100px; /* Adjust the height of the guy animation */
-    background-image: url('assets/sadge_cat.jpeg'); /* Updated image path */
+    background-image: url('assets/cat_drawing.png'); /* Updated image path */
     background-size: cover;
     position: absolute; /* Position the guy animation within the game area */
     top: 50%; /* Center vertically */

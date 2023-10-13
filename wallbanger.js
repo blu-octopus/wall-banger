@@ -22,11 +22,11 @@ document.querySelector(".game-area").addEventListener("click", function() {
 
         // Play the click animation
         const catAnimation = document.getElementById("cat");
-        catAnimation.style.backgroundImage = 'url("assets/cat.gif")';
+        catAnimation.style.backgroundImage = 'url("assets/cat_drawing_bang.png")';
 
         // After a delay, switch back to the PNG image
         setTimeout(function() {
-            catAnimation.style.backgroundImage = 'url("assets/sadge_cat.jpeg")';
+            catAnimation.style.backgroundImage = 'url("assets/cat_drawing.png")';
             isAnimating = false;
         }, animationDuration);
     }
