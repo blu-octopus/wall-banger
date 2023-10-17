@@ -3,7 +3,7 @@
 let score = 0;
 let isAnimating = false; // Variable to track animation state
 const animationDuration = 100; // Animation duration in milliseconds
-let skinCounter = 1; // Initial skin counter
+let skinCounter = 0; // Initial skin counter
 const upgradeThreshold = 10; // Score threshold for upgrading
 let canUpgrade = false; // Variable to track if an upgrade is available
 
@@ -87,8 +87,8 @@ document.getElementById("upgradeButton").addEventListener("click", function() {
         //upgradeThreshold *= 2;
 
         // If the skinCounter reaches a threshold (e.g., 5), reset it back to 1
-        if (skinCounter >= 5) {
-            skinCounter = 1;
+        if (skinCounter >= 3) {
+            skinCounter = 0;
         }
 
         // Check if the button can be upgraded after the upgrade
