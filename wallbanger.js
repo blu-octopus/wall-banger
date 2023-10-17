@@ -1,6 +1,11 @@
 // JavaScript code for Wall Banger
 
 let score = 0;
+let isAnimating = false; // Variable to track animation state
+const animationDuration = 100; // Animation duration in milliseconds
+let skinCounter = 1; // Initial skin counter
+const upgradeThreshold = 10; // Score threshold for upgrading
+let canUpgrade = false; // Variable to track if an upgrade is available
 
 // Get the audio element
 const clickSound = document.getElementById("clickSound");
@@ -9,14 +14,44 @@ const clickSound = document.getElementById("clickSound");
 clickSound.preload = "auto";
 clickSound.load();
 
+// Function to check if the button can be upgraded
+function checkUpgradability() {
+    canUpgrade = score >= upgradeThreshold;
+
+    // Update the button's appearance based on upgradability
+    const upgradeButton = document.getElementById("upgradeButton");
+    if (canUpgrade) {
+        upgradeButton.style.backgroundColor = "#4CAF50"; // Green color when upgradable
+        upgradeButton.style.pointerEvents = "auto"; // Make it clickable
+    } else {
+        upgradeButton.style.backgroundColor = "#ccc"; // Grayed out when not upgradable
+        upgradeButton.style.pointerEvents = "none"; // Disable click events
+    }
+}
+
 // Click event handler for the game area
 document.querySelector(".game-area").addEventListener("click", function() {
     // Debugging: Log a message to check if the click event is triggered
     console.log("Click event triggered.");
-    
+
+    // If not already animating, play the animation
+    if (!isAnimating) {
+        isAnimating = true;
+
+        // Play the click animation
+        const catAnimation = document.getElementById("cat");
+        catAnimation.style.backgroundImage = `url("assets/cat${skinCounter}_bang.png")`;
+
+        // After a delay, switch back to the PNG image
+        setTimeout(function() {
+            catAnimation.style.backgroundImage = `url("assets/cat${skinCounter}.png")`;
+            isAnimating = false;
+        }, animationDuration);
+    }
+
     // Increase score
     score++;
-    
+
     // Debugging: Log the updated score
     console.log("Score:", score);
 
@@ -29,18 +64,37 @@ document.querySelector(".game-area").addEventListener("click", function() {
 
     // Update the UI
     document.getElementById("score").textContent = score;
-    // Play click animation (you'll need to add this)
+
+    // Check if the button can be upgraded
+    checkUpgradability();
 });
 
-// Upgrade button event handler (if you still want it)
+// Upgrade button event handler
 document.getElementById("upgradeButton").addEventListener("click", function() {
-    if (score >= upgradeCost) {
+    if (canUpgrade) {
         // Deduct the upgrade cost
-        score -= upgradeCost;
+        score -= upgradeThreshold;
+        // Increase the skin counter (e.g., from 1 to 2)
+        skinCounter++;
         // Update the UI
         document.getElementById("score").textContent = score;
-        // Increase the click power or add an upgrade effect
+
+        // Update the cat image to the new skin
+        const catAnimation = document.getElementById("cat");
+        catAnimation.style.backgroundImage = `url("assets/cat${skinCounter}.png")`;
+
         // Update the upgrade cost based on your game logic
-        upgradeCost *= 2;
+        //upgradeThreshold *= 2;
+
+        // If the skinCounter reaches a threshold (e.g., 5), reset it back to 1
+        if (skinCounter >= 5) {
+            skinCounter = 1;
+        }
+
+        // Check if the button can be upgraded after the upgrade
+        checkUpgradability();
     }
 });
+
+// Initial check for upgradability
+checkUpgradability();

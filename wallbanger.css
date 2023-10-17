@@ -16,6 +16,14 @@
     position: relative; /* Required for positioning the guy animation */
     cursor: pointer; /* Change cursor to indicate clickability */
 }
+/* Style the wall image */
+.centered-image {
+    display: block;
+    margin: 0 auto; /* Set margin to auto to center the image horizontally */
+    position: relative; 
+    top: 25%; /* Center vertically */
+    left: 5%; /* Center horizontally */
+}
 
 /* Style the guy animation */
 .guy-animation {
@@ -25,8 +33,8 @@
     background-size: cover;
     position: absolute; /* Position the guy animation within the game area */
     top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Center the animation */
+    left: 55%; /* Center horizontally */
+    transform: translate(-60%, -10%); /* Center the animation */
 }
 
 /* Style the score display */
@@ -50,3 +58,4 @@ button {
 button:hover {
     background-color: #45a049;
 }
+
