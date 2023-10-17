@@ -29,7 +29,7 @@
 .guy-animation {
     width: 100px; /* Adjust the width of the guy animation */
     height: 100px; /* Adjust the height of the guy animation */
-    background-image: url('assets/cat_drawing.png'); /* Updated image path */
+    background-image: url('assets/cat0.png'); /* Updated image path */
     background-size: cover;
     position: absolute; /* Position the guy animation within the game area */
     top: 50%; /* Center vertically */
