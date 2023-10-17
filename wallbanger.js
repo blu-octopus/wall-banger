@@ -2,7 +2,7 @@
 
 let score = 0;
 let isAnimating = false; // Variable to track animation state
-const animationDuration = 500; // Animation duration in milliseconds
+const animationDuration = 100; // Animation duration in milliseconds
 
 // Get the audio element
 const clickSound = document.getElementById("clickSound");
