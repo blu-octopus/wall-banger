@@ -83,14 +83,6 @@ document.getElementById("upgradeButton").addEventListener("click", function() {
         const catAnimation = document.getElementById("cat");
         catAnimation.style.backgroundImage = `url("assets/cat${skinCounter}.png")`;
 
-        // Update the upgrade cost based on your game logic
-        //upgradeThreshold *= 2;
-
-        // If the skinCounter reaches a threshold (e.g., 5), reset it back to 1
-        if (skinCounter >= 3) {
-            skinCounter = 0;
-        }
-
         // Check if the button can be upgraded after the upgrade
         checkUpgradability();
     }
