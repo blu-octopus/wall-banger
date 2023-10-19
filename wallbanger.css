@@ -1,4 +1,3 @@
-/* CSS code for Wall Banger */
 
 /* Style the game container */
 .game-container {
@@ -9,13 +8,15 @@
 
 /* Style the game area (rectangle) */
 .game-area {
-    width: 300px;
+    width: 400px;
     height: 300px;
     /*background-image: url('assets/wall.png'); /* Updated image path */
     background-color: #ccc; /* Background color of the game area */
     position: relative; /* Required for positioning the guy animation */
     cursor: pointer; /* Change cursor to indicate clickability */
 }
+/* Add a pseudo-element to the game area for the repeating background outside */
+
 /* Style the wall image */
 .centered-image {
     display: block;
